@@ -1,0 +1,129 @@
+﻿@{
+    ViewBag.Title = "GameView";
+}
+<div id="testModal" class="modal"  >
+    <div class="modal-header">
+        <form class="form-horizontal">
+            <fieldset>
+                <legend> New Feature</legend>
+                <div class="control-group">
+                    <legend >General Properties</legend> 
+                    <div class="control-group ">
+                        <label class="control-label" for="code">Code:</label>
+                        <div class="controls">
+                            <input type="text" class="input-large" id="code"  />*
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="ModelName">Modeling Name:</label>
+                        <div class="controls">
+                            <input type="text" class="input-large" id="ModelName"  />*
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="Description">Description:</label>
+                        <div class="controls">
+                            <input type="text" class="input-xlarge" id="Description" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="IsLessFeature">Less Feature:</label>
+                        <div class="controls">
+                            <input type="checkbox" class="checkbox" id="IsLessFeature"  />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="FeatureFamily">Feature Family:</label>
+                        <div class="controls">
+                            <select id="FeatureFamily">
+                                <option>ACCS</option>
+                                <option>AXPX</option>
+                                <option>BODY</option>
+                                <option>COMM</option>
+                                <option>ENGN</option>
+                                <option>ENPX</option>
+                                <option>FABR</option>
+                                <option>GBPX</option>
+                                <option>KNUM</option>
+                                <option>MSCH</option>
+                                <option>PACK</option>
+                                <option>PCOL</option>
+                                <option>PVEP</option>
+                                <option>SNUM</option>
+                                <option>STRG</option>
+                                <option>SVOP</option>
+                                <option>TBPX</option>
+                                <option>TC&M</option>
+                                <option>TRAN</option>
+                                <option>TRIM</option>
+                                <option>VIN1</option>
+                                <option>VIN2</option>
+                                <option>VIN3</option>
+                                <option>VIN4</option>
+                                <option>VIN5</option>
+                                <option>VIN6</option>
+                                <option>VIN7</option>
+                                <option>VIN8</option>
+                                <option>VIN9</option>
+                                <option>VINT</option>
+                                <option>WHTY</option>
+                                <option>CDEV</option>
+                                <option>CHRG</option>
+                                <option>CPCK</option>
+                                <option>DPCK</option>
+                                <option>ECUS</option>
+                                <option>HOOD</option>
+                                <option>LCOD</option>
+                                <option>MPCK</option>
+                                <option>NORP</option>
+                                <option>NSTD</option>
+                                <option>NSVN</option>
+                                <option>RSP1</option>
+                                <option>SCOP</option>
+                                <option>TPCK</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="LifeCycle">Life Cycle:</label>
+                        <div class="controls">
+                            <select id="LifeCycle">
+                                <option>Explicit</option>
+                                <option>Future</option>
+                                <option>Implicit</option>
+                                <option>Obsolete</option>
+                            </select>
+                        </div>
+                    </div> 
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Other Codes</legend>
+                <div class="control-group">
+                    <label class="control-label" for="WERS">WERS:</label>
+                    <div class="controls">
+                        <input type="text" class="input-large" id="WERS"  />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="LR">LR:</label>
+                    <div class="controls">
+                        <input type="text" class="input-large" id="LR"  />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="OA">OA:</label>
+                    <div class="controls">
+                        <input type="text" class="input-large" id="OA"  />
+                    </div>
+                </div>
+                
+            </fieldset>
+            <div>
+                <a class="btn" href="?" > Add Feature </a>
+                <a class="btn" href="?"> Cancel </a>
+            </div>
+        </form>
+    </div>
+   
+</div>

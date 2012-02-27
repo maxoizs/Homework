@@ -1,0 +1,7 @@
+c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\bin\NewMVC.dll
+c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\bin\NewMVC.pdb
+c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\bin\EntityFramework.dll
+c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\bin\EntityFramework.xml
+c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\obj\Debug\ResolveAssemblyReference.cache
+c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\obj\Debug\NewMVC.dll
+c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\obj\Debug\NewMVC.pdb
