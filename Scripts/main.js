@@ -1,74 +1,81 @@
-﻿define(["backbone", "jquery", "hogan", "underscore"], function (backbone, $, hogan, _) {
-    Person = backbone.Model.extend({
-        initialize: function () {
-            console.log('Hello ' + this.get('name') + ' - Age:' + this.get('age'));
+﻿define( ["backbone", "jquery", "hogan", "underscore"], function( backbone, $, hogan, _ ) {
+  person = backbone.Model.extend( {
+    initialize: function() {
+      this.bind( 'error', 'handleError' );
+    },
+    handleError: function( model, error ) {
+      $( error ).each( function( index, elem ) {
+        console.log( elem );
+      } );
+    },
+    validate: function( attrs ) {
+      var er = [];
+      if ( !attrs.name ) {
+        //console.log('Name is invalid');
+        er.push( 'Name:' + attrs.Name + '<- Name is invalid ' );
+      }
 
-            this.bind('change', function (x) {
-                console.log(x.get('name'), x.get('age'));
+      if ( attrs.age < 18 ) {
+        //console.log('you are under age');
+        er.push( 'Age:' + attrs.age + '<- you are under age' );
+      }
 
-            });
-            this.bind('error', function (model, error) {
-                $(error).each(function (index, elem) {
-                    console.log(elem);
-                });
+      if ( !attrs.address ) {
+        //
+        er.push( 'Address:' + attrs.address + '<- please insert a correct address' );
+      }
 
-            });
-        },
-        validate: function (attrs) {
-            var er = [];
-            if (!attrs.name) {
-                //console.log('Name is invalid');
-                er.push('Name:' + attrs.Name + '<- Name is invalid ');
-            }
+      if ( er.length > 0 ) {
 
-            if (attrs.age < 18) {
-                //console.log('you are under age');
-                er.push('Age:' + attrs.age + '<- you are under age');
-            }
-
-            if (!attrs.address) {
-                //
-                er.push('Address:' + attrs.address + '<- please insert a correct address');
-            }
-
-            if (er.length > 0) {
-
-                return er;
-            }
+        return er;
+      }
 
 
-        }
-    });
-    PersonView = backbone.View.extend({
-        initialize: function () {
-            this.render();
-            console.log('Iam at the view ');
-            //console.log(this.el.html());
-        },
-        render: function () {
-            //console.log(_.template($('#gameView').html(), {}));
-            this.template = _.template($('#gameView').html()); // $("#gameView");
-            var x = this.template(this.model.toJSON());
-            $(this.el).html(x);
-            return this;
-        },
-        events: {
-            'click button[type=submit]': 'savePerson',
-            'click button[type=cancel]': 'cancelEdit'
-        },
-        savePerson: function () {
-            console.log('save person');
-        },
-        cancelEdit: function () {
+    }
+  } );
+  personCollection = backbone.Collection.extend( {
+    mode: person
+  } );
+  personView = backbone.View.extend( {
+    initialize: function() {
+      this.collection = new personCollection();
+      this.collection.bind( 'add', this.addperson );
+      this.mode = new person();
+      this.render();
+    },
+    addperson: function( model ) {
+      $( 'ul' ).append( '<li>' + model.get( 'name' ) + ',' + model.get( 'age' ) + '</li>' );
+    },
+    render: function() {
+      this.template = _.template( $( '#gameView' ).html() );
+      $( this.el ).html( this.template );
+      this.model = new person();
+      return this;
+    },
+    events: {
+      'click button[type=submit]': 'savePerson',
+      'click button[type=cancel]': 'cancelEdit',
+      'change input': 'inputdata'
 
-            console.log('clear form');
-        }
+    },
+    inputdata: function( ev ) {
+      var val = $( ev.currentTarget ).val();
+      var attr = ev.currentTarget.id;
+      console.log( attr, ',', val );
+      this.model.set( { attr: val } );
+    },
 
-    });
-    var person = new Person({ name: 'Mohammad', age: '30' });
-    var personview = new PersonView({ el: $('#gameView'), model: person });
-    personview.render();
-});
+    savePerson: function() {
+      this.collection.add( new person( { name: $( '#name' ).val(), age: $( '#age' ).val(), address: $( '#address' ).val() } ) );
+    },
+    cancelEdit: function() {
+      $( 'input' ).val( '' );
+    }
+
+  } );
+  var personview = new personView( { el: $( '#gameView' ), model: new person() } );
+  personview.render();
+} );
     //    var xhr = new XMLHttpRequest();
     //    xhr.onreadystatechange = function () {
     //        if ((xhr.readyState == 4) && (xhr.status == 200)) {
@@ -95,20 +102,4 @@
     //   },
     //   });
     //end of testing the Rout
-    //James Test
-    //    return = backbone.Model.extend({
-    //        urlRoot : '/Default/Persons',
-    //        intialize:function () {
-    //            this.bind(All);
-    //            this("change","attrChange");
-    //            this.fetch();
-    //        },
-     //    });
-    // End of James TEst
-    //    var mo = new persone({ name: "Mohammad", age: 30 });
-    //    var sta = new persone({});
-    //    sta.fetch();
-    ////    sta.save();
-    //    $('#gameView').html(mo.get('age'));
-    //return modal.render();
 
