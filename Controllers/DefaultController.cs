@@ -18,9 +18,10 @@ namespace NewMVC.Controllers
 
         public ActionResult Persons()
         {
-            Person p = new  Person(){Name ="Mo",Age=23,ismale= true};
+            Person p = new  Person(){Name ="Stefan",Age=22,ismale= true};
 
             return Json(p, JsonRequestBehavior.AllowGet); 
+            
         }
 
     }
