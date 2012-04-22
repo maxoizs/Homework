@@ -5,49 +5,49 @@
 <div id="gameView">
     <form class="form-horizontal">
         <fieldset>
-            <legend> New Feature</legend>
+            <legend> Pesron Data</legend>
             <div class="control-group">
-                <legend >General Properties</legend> 
                 <div class="control-group ">
-                    <label class="control-label" for="ID">ID:</label>
+                    <label class="control-label" for="id">ID:</label>
                     <div class="controls">
-                        <input type="text" class="input-large" id="ID"  />*
+                        <input type="text" class="input-large" id="id"  />*
                     </div>
                 </div>
                 <div class="control-group">
-                    <label for="gameName">Game Name:</label>
+                  <label for="name">Name:</label>
                     <div class="controls">
-                        <input type="text" class="input-large" id="gameName"  />*
+                        <input type="text" class="input-large" id="name"  />*
                     </div>
                 </div>
                 <div class="control-group">
-                    <label for="dateReleased">Release Date:</label>
+                    <label for="age">Age:</label>
                     <div class="controls">
-                        <input type="text" class="input-xlarge" id="dateReleased" />
+                        <input type="text" class="input-small" id="age" />
                     </div>
                 </div>
                 <div class="control-group">
-                    <label for="IsHot">Is Hot or Not:</label>
+                    <label for="isMale">Male:</label>
                     <div class="controls">
-                        <input type="checkbox" class="checkbox" id="IsHot" />
+                        <input type="checkbox" class="checkbox" id="isMale" />
                     </div>
                 </div>
-             
-                <div class="control-group">
-                    <label class="control-label" for="gameType">Game Type:</label>
-                    <div class="controls">
-                        <select id="gameType">
-                            <option>Action</option>
-                            <option>Story</option>
-                            <option>Race</option>
-                            <option>Shooter</option>
-                        </select>
-                    </div>
-                </div> 
+            <!--
+              <div class="control-group">
+                <label class="control-label" for="gameType">Game Type:</label>
+                <div class="controls">
+                  <select id="gameType">
+                    <option>Action</option>
+                    <option>Story</option>
+                    <option>Race</option>
+                    <option>Shooter</option>
+                  </select>
+                </div>
+              </div> 
+              -->
             </div>
-             <div >
-                <a class="btn" href="?" > Add Game </a>
-                <a class="btn" href="?"> Cancel </a>
+             <div class="form-actions">
+                <a class="btn btn-primary" href="#" > Add Person </a>
+                <a class="btn cancel" href="#"> Cancel </a>
             </div>
         </fieldset>
     </form>
