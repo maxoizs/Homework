@@ -5,3 +5,9 @@ c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\bin\Entity
 c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\obj\Debug\ResolveAssemblyReference.cache
 c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\obj\Debug\NewMVC.dll
 c:\users\mohammad\documents\visual studio 2010\Projects\NewMVC\NewMVC\obj\Debug\NewMVC.pdb
+D:\Configit\Projects\Homework\bin\NewMVC.dll
+D:\Configit\Projects\Homework\bin\NewMVC.pdb
+D:\Configit\Projects\Homework\bin\EntityFramework.xml
+D:\Configit\Projects\Homework\obj\Debug\ResolveAssemblyReference.cache
+D:\Configit\Projects\Homework\obj\Debug\NewMVC.dll
+D:\Configit\Projects\Homework\obj\Debug\NewMVC.pdb
