@@ -1,0 +1,81 @@
+<Interview>
+	<Header>
+		<TransactionId>31582931</TransactionId>
+		<TransactionTime>2016-05-03T14:09:15.443</TransactionTime>
+	</Header>
+	<Patients>
+		<Patient>
+			<Basic>
+				<PasNumber>19083207</PasNumber>
+				<Forenames>John</Forenames>
+				<Surname>Smith</Surname>
+				<DateOfBirth>1992-08-19T00:00:00</DateOfBirth>
+				<SexCode>M</SexCode>
+				<HomeTelephoneNumber>07708111957</HomeTelephoneNumber>
+			</Basic>  
+			<NextOfKin>
+				<NokName>MICHELLE Smith</NokName>
+				<NokRelationshipCode>DAUGHTER</NokRelationshipCode>
+				<NokAddressLine1>52 Old RD</NokAddressLine1>
+				<NokAddressLine2>SOUTHBOURNE</NokAddressLine2>
+				<NokAddressLine3>EMSWORTH</NokAddressLine3>
+				<NokAddressLine4>HANTS</NokAddressLine4>
+				<NokPostcode>PO20 9JX</NokPostcode>
+			</NextOfKin>
+			<GpDetails>
+				<GpCode>871334</GpCode>
+				<GpSurname>CHADWICK</GpSurname>
+				<GpInitials>KC</GpInitials>
+				<GpPhone>01243 388740</GpPhone>
+			</GpDetails>
+		</Patient>
+		<Patient>
+			<Basic>
+				<PasNumber>19283208</PasNumber>
+				<Forenames>Tom</Forenames>
+				<Surname>Cruise</Surname>
+				<DateOfBirth>1975-08-19T00:00:00</DateOfBirth>
+				<SexCode>M</SexCode>
+				<HomeTelephoneNumber>07708111777</HomeTelephoneNumber>
+			</Basic>  
+			<NextOfKin>
+				<NokName>Gemma Cruise</NokName>
+				<NokRelationshipCode>Wife</NokRelationshipCode>
+				<NokAddressLine1>24 Claremont Road</NokAddressLine1>
+				<NokAddressLine2>Portsmouth</NokAddressLine2>
+				<NokAddressLine4>HANTS</NokAddressLine4>
+				<NokPostcode>PO15BN</NokPostcode>
+			</NextOfKin>
+			<GpDetails>
+				<GpCode>871334</GpCode>
+				<GpSurname>CHADWICK</GpSurname>
+				<GpInitials>KC</GpInitials>
+				<GpPhone>01243 388740</GpPhone>
+			</GpDetails>
+		</Patient>
+		<Patient>
+			<Basic>
+				<PasNumber>19823708</PasNumber>
+				<Forenames>Juli</Forenames>
+				<Surname>White</Surname>
+				<DateOfBirth>1975-08-19T00:00:00</DateOfBirth>
+				<SexCode>F</SexCode>
+				<HomeTelephoneNumber>07888111777</HomeTelephoneNumber>
+			</Basic>  
+			<NextOfKin>
+				<NokName>Dick White</NokName>
+				<NokRelationshipCode>Hussband</NokRelationshipCode>
+				<NokAddressLine1>22 Kings Road</NokAddressLine1>
+				<NokAddressLine2>Portsmouth</NokAddressLine2>
+				<NokAddressLine4>HANTS</NokAddressLine4>
+				<NokPostcode>PO5 4BN</NokPostcode>
+			</NextOfKin>
+			<GpDetails>
+				<GpCode>871334</GpCode>
+				<GpSurname>CHADWICK</GpSurname>
+				<GpInitials>KC</GpInitials>
+				<GpPhone>01243 388740</GpPhone>
+			</GpDetails>
+		</Patient>
+	</Patients>
+</Interview>

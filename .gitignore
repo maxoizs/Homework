@@ -1,0 +1,19 @@
+# git ignore file
+# git ignore file
+_ReSharper.*
+_TeamCity.*
+*.suo
+*.cache
+*.Cache
+*.user
+*.orig
+*.tmp
+*.svclog
+*.pdb
+*__.g
+*.tokens
+obj/
+bin/
+log/*
+*.StyleCop
+packages/*

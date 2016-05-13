@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Interview" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="Interview" msdata:IsDataSet="true" msdata:Locale="en-US">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransactionId" type="xs:string" minOccurs="0" />
+              <xs:element name="TransactionTime" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Patients">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Patient" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Basic" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="PasNumber" type="xs:string" minOccurs="0" />
+                          <xs:element name="Forenames" type="xs:string" minOccurs="0" />
+                          <xs:element name="Surname" type="xs:string" minOccurs="0" />
+                          <xs:element name="DateOfBirth" type="xs:string" minOccurs="0" />
+                          <xs:element name="SexCode" type="xs:string" minOccurs="0" />
+                          <xs:element name="HomeTelephoneNumber" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="NextOfKin" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="NokName" type="xs:string" minOccurs="0" />
+                          <xs:element name="NokRelationshipCode" type="xs:string" minOccurs="0" />
+                          <xs:element name="NokAddressLine1" type="xs:string" minOccurs="0" />
+                          <xs:element name="NokAddressLine2" type="xs:string" minOccurs="0" />
+                          <xs:element name="NokAddressLine3" type="xs:string" minOccurs="0" />
+                          <xs:element name="NokAddressLine4" type="xs:string" minOccurs="0" />
+                          <xs:element name="NokPostcode" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="GpDetails" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="GpCode" type="xs:string" minOccurs="0" />
+                          <xs:element name="GpSurname" type="xs:string" minOccurs="0" />
+                          <xs:element name="GpInitials" type="xs:string" minOccurs="0" />
+                          <xs:element name="GpPhone" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
