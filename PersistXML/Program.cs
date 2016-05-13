@@ -8,19 +8,5 @@ namespace PersistXML {
 
 
     }
-
-    public bool ValidateFileLocation( string path ) {
-      if ( File.Exists( path ) ) {
-        return true;
-      }
-
-      Console.WriteLine( "No file found at {0}", path );
-      return false;
-    }
-
-    public bool ValidateXMLContent(string path)
-    {
-      return false; 
-    }
   }
 }

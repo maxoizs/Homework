@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using PersistXML.Entities;
+using PersistXML.Xml;
 
 namespace PersistXML.Repositories {
   public class Database: DbContext {

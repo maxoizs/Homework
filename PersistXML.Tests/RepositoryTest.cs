@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersistXML.Tests {
-  class Program {
-    static void Main( string[] args ) {
+namespace PersistXML.Tests
+{
+    public class RepositoryTest
+    {
+
     }
-  }
 }

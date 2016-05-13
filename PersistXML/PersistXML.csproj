@@ -50,14 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\XmlInterviewReader.cs" />
+    <Compile Include="Repositories\PatientRepository.cs" />
+    <Compile Include="Xml\XmlInterviewExtensions.cs" />
     <Compile Include="Entities\IEntityWithId.cs" />
     <Compile Include="Entities\PatientInterview.cs" />
-    <Compile Include="Entities\PatientBasic.cs" />
     <Compile Include="Entities\GpDetails.cs" />
     <Compile Include="Entities\NextOfKin.cs" />
-    <Compile Include="InterviewXML.cs" />
+    <Compile Include="Xml\InterviewXML.cs" />
     <Compile Include="Entities\Patient.cs" />
-    <Compile Include="Patients.Designer.cs">
+    <Compile Include="Xml\Patients.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Patients.xsd</DependentUpon>
@@ -67,20 +69,19 @@
     <Compile Include="Repositories\Database.cs" />
     <Compile Include="Repositories\DbFactory.cs" />
     <Compile Include="Repositories\Repository.cs" />
-    <Compile Include="Repositories\PatientRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Patients.xsc">
+    <None Include="Xml\Patients.xsc">
       <DependentUpon>Patients.xsd</DependentUpon>
     </None>
-    <None Include="Patients.xsd">
+    <EmbeddedResource Include="Xml\Patients.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Patients.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Patients.xss">
+    </EmbeddedResource>
+    <None Include="Xml\Patients.xss">
       <DependentUpon>Patients.xsd</DependentUpon>
     </None>
   </ItemGroup>
