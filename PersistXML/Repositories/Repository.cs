@@ -2,11 +2,10 @@
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using PersistXML.Entities;
 
 namespace PersistXML.Repositories
 {
-    public class Repository<T> where T : class, IEntityWithId
+    public class Repository<T> where T : class
     {
         protected readonly DbSet<T> DbSet;
         protected readonly Database Database;
@@ -25,11 +24,6 @@ namespace PersistXML.Repositories
         {
             DbSet.AddOrUpdate(items);
             Database.SaveChanges();
-        }
-
-        public T GetById(int id)
-        {
-            return DbSet.First(c => c.Id == id);
         }
 
         public void Delete(T item)
