@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
@@ -10,9 +11,9 @@ namespace PersistXML.Repositories
         protected readonly DbSet<T> DbSet;
         protected readonly Database Database;
 
-        public Repository()
+        public Repository(DbFactory dbContextFactory)
         {
-            Database = new DbFactory().Create();
+            Database = dbContextFactory.Create();
             DbSet = Database.Set<T>();
         }
 

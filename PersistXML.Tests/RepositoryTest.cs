@@ -33,7 +33,7 @@ namespace PersistXML.Tests
         public void Test_SaveInterviews()
         {
             var interviews = _xmlInterview.ToPatientInterview();
-            var repo = new Repository<PatientInterview>();
+            var repo = new Repository<PatientInterview>(new DbFactory());
             repo.Save(interviews);
         }
     }

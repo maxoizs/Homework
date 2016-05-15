@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersistXML.Entities
 {
@@ -7,11 +8,7 @@ namespace PersistXML.Entities
     {
         [Key]
         public int Id { get; set; }
-
-        public int TransactionId { get; set; }
-
-        public virtual PatientInterview Interview { get; set; }
-
+      
         public string PasNumber { get; set; }
 
         public string Forenames { get; set; }
@@ -28,8 +25,9 @@ namespace PersistXML.Entities
 
         public virtual NextOfKin NextOfKin { get; set; }
 
-        public int GpDetailsId { get; set; }
+        public string GpCode { get; set; }
 
+        [ForeignKey("GpCode")]
         public virtual GpDetails GpDetails { get; set; }
     }
 }
