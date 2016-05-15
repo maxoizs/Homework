@@ -55,35 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper\XmlInterviewReader.cs" />
-    <Compile Include="Migrations\201605151238110_ChangePatient.cs" />
-    <Compile Include="Migrations\201605151238110_ChangePatient.Designer.cs">
-      <DependentUpon>201605151238110_ChangePatient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605151241070_RemovePatient_InterviewLink.cs" />
-    <Compile Include="Migrations\201605151241070_RemovePatient_InterviewLink.Designer.cs">
-      <DependentUpon>201605151241070_RemovePatient_InterviewLink.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605151251113_ChangeGPPrimaryCode.cs" />
-    <Compile Include="Migrations\201605151251113_ChangeGPPrimaryCode.Designer.cs">
-      <DependentUpon>201605151251113_ChangeGPPrimaryCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605151252463_ChangeGPForginKey.cs" />
-    <Compile Include="Migrations\201605151252463_ChangeGPForginKey.Designer.cs">
-      <DependentUpon>201605151252463_ChangeGPForginKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605151257373_ChangeGPForginKeyAgain.cs" />
-    <Compile Include="Migrations\201605151257373_ChangeGPForginKeyAgain.Designer.cs">
-      <DependentUpon>201605151257373_ChangeGPForginKeyAgain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605151258552_Unknown.cs" />
-    <Compile Include="Migrations\201605151258552_Unknown.Designer.cs">
-      <DependentUpon>201605151258552_Unknown.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605151301451_ChangeGPForginKeyToGPCODE.cs" />
-    <Compile Include="Migrations\201605151301451_ChangeGPForginKeyToGPCODE.Designer.cs">
-      <DependentUpon>201605151301451_ChangeGPForginKeyToGPCODE.cs</DependentUpon>
+    <Compile Include="Migrations\201605152157358_ChangeGPFields.cs" />
+    <Compile Include="Migrations\201605152157358_ChangeGPFields.Designer.cs">
+      <DependentUpon>201605152157358_ChangeGPFields.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\PatientInterviewRepository.cs" />
     <Compile Include="Repositories\PatientRepository.cs" />
     <Compile Include="Xml\XmlInterviewExtensions.cs" />
     <Compile Include="Entities\IEntityWithId.cs" />
@@ -109,26 +86,8 @@
     <None Include="Xml\Patients.xsc">
       <DependentUpon>Patients.xsd</DependentUpon>
     </None>
-    <EmbeddedResource Include="Migrations\201605151238110_ChangePatient.resx">
-      <DependentUpon>201605151238110_ChangePatient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605151241070_RemovePatient_InterviewLink.resx">
-      <DependentUpon>201605151241070_RemovePatient_InterviewLink.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605151251113_ChangeGPPrimaryCode.resx">
-      <DependentUpon>201605151251113_ChangeGPPrimaryCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605151252463_ChangeGPForginKey.resx">
-      <DependentUpon>201605151252463_ChangeGPForginKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605151257373_ChangeGPForginKeyAgain.resx">
-      <DependentUpon>201605151257373_ChangeGPForginKeyAgain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605151258552_Unknown.resx">
-      <DependentUpon>201605151258552_Unknown.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605151301451_ChangeGPForginKeyToGPCODE.resx">
-      <DependentUpon>201605151301451_ChangeGPForginKeyToGPCODE.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605152157358_ChangeGPFields.resx">
+      <DependentUpon>201605152157358_ChangeGPFields.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xml\Patients.xsd">
       <Generator>MSDataSetGenerator</Generator>

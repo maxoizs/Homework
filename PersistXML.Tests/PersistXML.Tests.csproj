@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RepositoryTest.cs" />
+    <Compile Include="PatientInterviewRepositoryTest.cs" />
     <Compile Include="XmlInterviewExtensionsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -4,14 +4,22 @@ using System.Reflection;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
+using PersistXML.Entities;
 using PersistXML.Xml;
 
 namespace PersistXML.Helper
 {
-    public static class XmlInterviewReader
+    /// <summary>
+    /// Helper class to read <see cref="PatientInterview"/> xml file, and deserialize it 
+    /// </summary>
+    public static class InterviewReader
     {
         private const string XmlInterviewRoot = "Interview";
 
+        /// <summary>
+        /// Read a file from a given file and return the file content buffer
+        /// </summary>
+        /// <returns>File buffer</returns>
         public static byte[] Read(string path)
         {
             if (!ValidateFileLocation(path))
@@ -30,6 +38,10 @@ namespace PersistXML.Helper
             }
         }
 
+        /// <summary>
+        /// Check if path is correct or invalid
+        /// </summary>
+        /// <returns><code>true</code> means file exists</returns>
         public static bool ValidateFileLocation(string path)
         {
             if (File.Exists(path))
@@ -41,6 +53,9 @@ namespace PersistXML.Helper
             return false;
         }
 
+        /// <summary>
+        /// Deserialize xml file using it's <code>byte[]</code> buffer
+        /// </summary>
         public static XmlInterview DeserializeXmlInterview(byte[] buffer, XmlReaderSettings settings)
         {
             using (var stream = new MemoryStream(buffer))
@@ -49,6 +64,9 @@ namespace PersistXML.Helper
             }
         }
 
+        /// <summary>
+        /// Deserialize xml file using it's <code>Stream</code> 
+        /// </summary>
         public static XmlInterview DeserializeXmlInterview(Stream stream, XmlReaderSettings settings)
         {
             XmlInterview xmlInterview;
@@ -61,12 +79,15 @@ namespace PersistXML.Helper
             return xmlInterview;
         }
 
-        public static XmlSchema GetSchemaFromResources(Assembly assembly, string resourcePath)
+        /// <summary>
+        /// read <code>XmlSchema</code> from given <code>Assembly</code>, using it's name  
+        /// </summary>
+        public static XmlSchema GetSchemaFromResources(Assembly assembly, string resourceName)
         {
             XmlSchema patientSchema;
 
             //TODO: Handle invlaid paths exception
-            using (var schemaStream = assembly.GetManifestResourceStream(resourcePath))
+            using (var schemaStream = assembly.GetManifestResourceStream(resourceName))
             {
                 if (schemaStream == null)
                 {
@@ -86,7 +107,7 @@ namespace PersistXML.Helper
 
         }
 
-        public static XmlReaderSettings GetSchemaSettings(XmlSchema xmlSchema)
+        public static XmlReaderSettings CreateSchemaSettings(XmlSchema xmlSchema)
         {
 
             var schemas = new XmlSchemaSet();

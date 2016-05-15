@@ -28,6 +28,6 @@ namespace PersistXML.Entities
         public string GpCode { get; set; }
 
         [ForeignKey("GpCode")]
-        public virtual GpDetails GpDetails { get; set; }
+        public virtual GPDetails GpDetails { get; set; }
     }
 }

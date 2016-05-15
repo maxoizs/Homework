@@ -19,12 +19,12 @@ namespace PersistXML.Tests
         [SetUp]
         public void Setup()
         {
-            var patientSchema = XmlInterviewReader.GetSchemaFromResources(typeof(XmlInterview).Assembly, XmlPatientsXSDResourcePath);
-            var settings = XmlInterviewReader.GetSchemaSettings(patientSchema);
+            var patientSchema = InterviewReader.GetSchemaFromResources(typeof(XmlInterview).Assembly, XmlPatientsXSDResourcePath);
+            var settings = InterviewReader.CreateSchemaSettings(patientSchema);
 
             using (var fileStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(XmlPatientsPath))
             {
-                _xmlInterview = XmlInterviewReader.DeserializeXmlInterview(fileStream, settings);
+                _xmlInterview = InterviewReader.DeserializeXmlInterview(fileStream, settings);
             }
 
             //var buffer = XmlInterviewReader.Read(@"D:\Dev\Homework\Patients.xml");
@@ -98,9 +98,9 @@ namespace PersistXML.Tests
             var gp = xmlPatients.Patient
               .First(p => p.GpDetails.Any(b => b.GpCode == "871334")).GpDetails.First();
 
-            Assert.That(result.GpSurname, Is.EqualTo(gp.GpSurname));
-            Assert.That(result.GpInitials, Is.EqualTo(gp.GpInitials));
-            Assert.That(result.GpPhone, Is.EqualTo(gp.GpPhone));
+            Assert.That(result.Surname, Is.EqualTo(gp.GpSurname));
+            Assert.That(result.Initials, Is.EqualTo(gp.GpInitials));
+            Assert.That(result.Phone, Is.EqualTo(gp.GpPhone));
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
@@ -21,21 +20,21 @@ namespace PersistXML.Repositories
         /// Create or Update T
         /// </summary>
         /// <param name="items"></param>
-        public void Save(params T[] items)
+        public virtual void Save(params T[] items)
         {
             DbSet.AddOrUpdate(items);
             Database.SaveChanges();
         }
 
-        public void Delete(T item)
+        public virtual void Delete(T item)
         {
             DbSet.Remove(item);
             Database.SaveChanges();
         }
 
-        public IEnumerable<T> Get(System.Func<T, bool> selector)
+        public virtual IEnumerable<T> Get(System.Func<T, bool> selector)
         {
-            return Database.Set<T>().Where(selector);
+            return DbSet.Where(selector);
         }
     }
 }

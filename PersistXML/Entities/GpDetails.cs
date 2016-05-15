@@ -2,15 +2,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PersistXML.Entities
 {
-    public class GpDetails
+    public class GPDetails
     {
         [Key]
-        public string GpCode { get; set; }
+        public string Code { get; set; }
 
-        public string GpSurname { get; set; }
+        public string Surname { get; set; }
 
-        public string GpInitials { get; set; }
+        public string Initials { get; set; }
 
-        public string GpPhone { get; set; }
+        public string Phone { get; set; }
     }
 }

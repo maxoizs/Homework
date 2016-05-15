@@ -52,14 +52,14 @@ namespace PersistXML.Xml
                 };
         }
 
-        public static GpDetails ToGpDetails(this XmlGpDetails xmlGpDetails)
+        public static GPDetails ToGpDetails(this XmlGpDetails xmlGpDetails)
         {
-            return new GpDetails
+            return new GPDetails
                 {
-                    GpCode = xmlGpDetails.GpCode,
-                    GpInitials = xmlGpDetails.GpInitials,
-                    GpPhone = xmlGpDetails.GpPhone,
-                    GpSurname = xmlGpDetails.GpSurname
+                    Code = xmlGpDetails.GpCode,
+                    Initials = xmlGpDetails.GpInitials,
+                    Phone = xmlGpDetails.GpPhone,
+                    Surname = xmlGpDetails.GpSurname
                 };
         }
 
