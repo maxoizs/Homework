@@ -16,16 +16,19 @@ namespace PersistXML.Tests
         private const string XmlPatientsXSDResourcePath = "PersistXML.Xml.Patients.xsd";
         private PatientInterviewRepository _interviewRepository;
         private PatientRepository _patientRepo;
-        private Repository<GPDetails> _gpRepo;
+        private Repository<GpDetails> _gpRepo;
         private Repository<NextOfKin> _nokRepo;
-        private GPDetails _gpForTest;
+        private GpDetails _gpForTest;
 
         [SetUp]
         public void Setup()
         {
+            // Normally I would trust the EF doing the right job 
+            // and I'll mock most these repositories 
+
             var dbFactory = new DbFactory();
             _nokRepo = new Repository<NextOfKin>(dbFactory);
-            _gpRepo  = new Repository<GPDetails>(dbFactory);
+            _gpRepo  = new Repository<GpDetails>(dbFactory);
             _patientRepo = new PatientRepository(dbFactory, _gpRepo);
             _interviewRepository = new PatientInterviewRepository(dbFactory, _patientRepo);
 

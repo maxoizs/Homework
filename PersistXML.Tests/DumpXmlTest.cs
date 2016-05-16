@@ -30,6 +30,7 @@ namespace PersistXML.Tests
         [Test]
         public void When_InvalidPath_ShouldThrowException()
         {
+            // I didn't add the tested files to resources because it meant to be an application that reads from a directory. 
             Assert.Throws<NullReferenceException>(() => InterviewReader.Read(@"D:\Dev\Homework\invalid"));
         }
 

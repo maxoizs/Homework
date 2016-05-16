@@ -12,15 +12,18 @@ namespace PersistXML.Xml
 
             foreach (var item in xmlInterview.Items)
             {
-                if (item is XmlHeader)
+                var xmlHeader = item as XmlHeader;
+                if (xmlHeader != null)
                 {
-                    var header = (XmlHeader)item;
+                    var header = xmlHeader;
                     resultInterview.TransactionId = header.TransactionId;
                     resultInterview.TransactionTime = DateTime.Parse(header.TransactionTime);
                 }
-                if (item is XmlPatients)
+
+                var xmlPatients = item as XmlPatients;
+                if (xmlPatients != null)
                 {
-                    var patients = ((XmlPatients)item).Patient;
+                    var patients = xmlPatients.Patient;
                     foreach (var patient in patients)
                     {
                         resultInterview.Patients.Add(patient.ToPatient());
@@ -30,15 +33,28 @@ namespace PersistXML.Xml
             return resultInterview;
         }
 
+        /// <summary>
+        /// Convert <see cref="XmlPatient"/> to <see cref="Patient"/>
+        /// Will convert it's <see cref="XmlPatientBasic"/> if exists
+        /// Will convert it's <see cref="XmlGpDetails"/> if exists
+        /// Will convert it's <see cref="XmlNextOfKin"/> if exists
+        /// </summary>
+        /// <returns>Returns a full <see cref="Patient"/>, and returns empty one if basic element is not exists</returns>
         public static Patient ToPatient(this XmlPatient xmlPatient)
         {
+            if (!xmlPatient.Basic.Any())
+            {
+                return new Patient();
+            }
             var patient = xmlPatient.Basic.First().ToPatientDetials();
-            patient.GpDetails = xmlPatient.GpDetails.First().ToGpDetails();
-            patient.NextOfKin = xmlPatient.NextOfKin.First().ToNextOfKin();
-
+            patient.GpDetails = xmlPatient.GpDetails.Any()? xmlPatient.GpDetails.First().ToGpDetails(): null;
+            patient.NextOfKin = xmlPatient.NextOfKin.Any()? xmlPatient.NextOfKin.First().ToNextOfKin(): null;
             return patient;
         }
 
+        /// <summary>
+        /// Convert <see cref="XmlPatientBasic"/> to <see cref="Patient"/>
+        /// </summary>
         public static Patient ToPatientDetials(this XmlPatientBasic xmlPatient)
         {
             return new Patient
@@ -52,9 +68,12 @@ namespace PersistXML.Xml
                 };
         }
 
-        public static GPDetails ToGpDetails(this XmlGpDetails xmlGpDetails)
+        /// <summary>
+        /// Convert <see cref="XmlGpDetails"/> to <see cref="GpDetails"/>
+        /// </summary>
+        public static GpDetails ToGpDetails(this XmlGpDetails xmlGpDetails)
         {
-            return new GPDetails
+            return new GpDetails
                 {
                     Code = xmlGpDetails.GpCode,
                     Initials = xmlGpDetails.GpInitials,
@@ -63,6 +82,9 @@ namespace PersistXML.Xml
                 };
         }
 
+        /// <summary>
+        /// Convert <see cref="XmlNextOfKin"/> to <see cref="NextOfKin"/>
+        /// </summary>
         public static NextOfKin ToNextOfKin(this XmlNextOfKin xmlNextOfKin)
         {
             return new NextOfKin

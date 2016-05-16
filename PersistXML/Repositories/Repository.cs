@@ -19,7 +19,6 @@ namespace PersistXML.Repositories
         /// <summary>
         /// Create or Update T
         /// </summary>
-        /// <param name="items"></param>
         public virtual void Save(params T[] items)
         {
             //Not a wise option but a quick one.

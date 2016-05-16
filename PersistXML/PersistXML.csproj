@@ -54,7 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\PatientTest.cs" />
     <Compile Include="Entities\DumpXml.cs" />
     <Compile Include="Helper\InterviewReader.cs" />
     <Compile Include="Migrations\201605152157358_ChangeGPFields.cs" />
@@ -69,7 +68,6 @@
     <Compile Include="Repositories\PatientInterviewRepository.cs" />
     <Compile Include="Repositories\PatientRepository.cs" />
     <Compile Include="Xml\XmlInterviewExtensions.cs" />
-    <Compile Include="Entities\IEntityWithId.cs" />
     <Compile Include="Entities\PatientInterview.cs" />
     <Compile Include="Entities\GpDetails.cs" />
     <Compile Include="Entities\NextOfKin.cs" />

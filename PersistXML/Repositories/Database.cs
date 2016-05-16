@@ -7,7 +7,7 @@ namespace PersistXML.Repositories
     {
         public DbSet<DumpXml> XmlDumps { get; set; }
         public DbSet<Patient> Patients { get; set; }
-        public DbSet<GPDetails> GpDetails { get; set; }
+        public DbSet<GpDetails> GpDetails { get; set; }
         public DbSet<NextOfKin> NextOfKins { get; set; }
         public DbSet<PatientInterview> Interviews { get; set; }
 

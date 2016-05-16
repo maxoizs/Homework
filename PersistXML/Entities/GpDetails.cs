@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PersistXML.Entities
 {
-    public class GPDetails
+    public class GpDetails
     {
         [Key]
         public string Code { get; set; }

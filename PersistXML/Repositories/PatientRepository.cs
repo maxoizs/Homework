@@ -5,9 +5,9 @@ namespace PersistXML.Repositories
 {
     public class PatientRepository : Repository<Patient>
     {
-        private readonly Repository<GPDetails> _gpRepository;
+        private readonly Repository<GpDetails> _gpRepository;
 
-        public PatientRepository(DbFactory dbContextFactory, Repository<GPDetails> gbRepository)
+        public PatientRepository(DbFactory dbContextFactory, Repository<GpDetails> gbRepository)
             : base(dbContextFactory)
         {
             _gpRepository = gbRepository;                    
@@ -17,7 +17,7 @@ namespace PersistXML.Repositories
         {
             foreach (var patient in patients.Where(p => p.GpDetails != null))
             {
-                // Since I'm using GPCode to identify GPs I have to sepreatly save them 
+                // Since I'm using GPCode to identify GPs I have to separately save them 
                 // same for patients and nextOfKin it they has a unique key rather than the Id. 
                 HandleGPDetails(patient);
             }
@@ -25,7 +25,7 @@ namespace PersistXML.Repositories
         }
 
         /// <summary>
-        /// Save <see cref="GPDetails"/> and remove it from the parent object
+        /// Save <see cref="GpDetails"/> and remove it from the parent object
         /// </summary>
         /// <param name="patient"></param>
         private void HandleGPDetails(Patient patient)
