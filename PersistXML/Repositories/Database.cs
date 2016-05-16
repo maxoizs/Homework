@@ -5,6 +5,7 @@ namespace PersistXML.Repositories
 {
     public class Database : DbContext
     {
+        public DbSet<DumpXml> XmlDumps { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<GPDetails> GpDetails { get; set; }
         public DbSet<NextOfKin> NextOfKins { get; set; }

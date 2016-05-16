@@ -26,9 +26,6 @@ namespace PersistXML.Tests
             {
                 _xmlInterview = InterviewReader.DeserializeXmlInterview(fileStream, settings);
             }
-
-            //var buffer = XmlInterviewReader.Read(@"D:\Dev\Homework\Patients.xml");
-            //_xmlInterview = XmlInterviewReader.DeserializeXmlInterview(buffer, settings);
         }
 
         [Test]

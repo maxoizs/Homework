@@ -24,7 +24,7 @@ namespace PersistXML.Entities
         public int NextOfKinId { get; set; }
 
         public virtual NextOfKin NextOfKin { get; set; }
-
+      
         public string GpCode { get; set; }
 
         [ForeignKey("GpCode")]

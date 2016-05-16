@@ -54,10 +54,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helper\XmlInterviewReader.cs" />
+    <Compile Include="Entities\PatientTest.cs" />
+    <Compile Include="Entities\DumpXml.cs" />
+    <Compile Include="Helper\InterviewReader.cs" />
     <Compile Include="Migrations\201605152157358_ChangeGPFields.cs" />
     <Compile Include="Migrations\201605152157358_ChangeGPFields.Designer.cs">
       <DependentUpon>201605152157358_ChangeGPFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605161341328_AddDumpXML.cs" />
+    <Compile Include="Migrations\201605161341328_AddDumpXML.Designer.cs">
+      <DependentUpon>201605161341328_AddDumpXML.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\PatientInterviewRepository.cs" />
@@ -88,6 +94,9 @@
     </None>
     <EmbeddedResource Include="Migrations\201605152157358_ChangeGPFields.resx">
       <DependentUpon>201605152157358_ChangeGPFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605161341328_AddDumpXML.resx">
+      <DependentUpon>201605161341328_AddDumpXML.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xml\Patients.xsd">
       <Generator>MSDataSetGenerator</Generator>
